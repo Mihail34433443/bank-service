@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { Account } from './account/account.model';
+import { AccountModule } from './account/account.module';
+import { Client } from './client/clients.model';
+import { ClientModule } from './client/clients.module';
 import { Transaction } from './transaction/transaction.model';
 import { TransactionModule } from './transaction/transaction.module';
-import { ClientModule } from './client/clients.module';
-import { Client } from './client/clients.model';
-import { AccountModule } from './account/account.module';
-import { Account } from './account/account.model';
 
 @Module({
   imports: [
