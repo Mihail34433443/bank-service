@@ -1,5 +1,15 @@
 # bank-service
 
+## Technologies
+
+- Postgres
+- Node.js
+- NestJS
+- Swagger
+- Git
+- NPM
+- TypeScript
+
 ## Installation
 
 ```bash
@@ -28,7 +38,19 @@ WHITE_HOSTS=localhost:3000 google.com
 
 ## Running the app
 
+Run by npm
+
+```bash
+$ npm run start:dev
+```
+
+Run in docker
+
 ```bash
 $ docker-compose build
 $ docker-compose up
 ```
+
+## Swagger
+
+/api/docs
