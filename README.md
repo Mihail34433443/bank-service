@@ -6,7 +6,7 @@ File with description: ./document/description.docx
 
 ## Solution description
 
-Реализация REST API для операций по осуществлению банковский транзацкий.
+Реализация REST API для операций по осуществлению банковский транзакций.
 
 ## Environmental requirements
 
@@ -38,15 +38,7 @@ WHITE_HOSTS=localhost:3000 google.com
 
 ## Running the app
 
-Run by npm
-
-```bash
-command: /bin/bash -c "npm i;npm start"
 ```
-
-Run in docker
-
-```bash
 $ docker-compose build
 $ docker-compose up
 ```
