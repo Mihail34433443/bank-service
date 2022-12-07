@@ -6,9 +6,10 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { SkipThrottle } from '@nestjs/throttler';
+import { RequestLimitGuard } from 'src/guards/request-limit.guard';
 import { Transaction } from 'src/transaction/transaction.model';
 import { OPERATION_TYPE } from './account.enum';
 import { Account } from './account.model';
@@ -16,7 +17,6 @@ import { AccountService } from './account.service';
 import { CreateAccountDto } from './dto/create-account.dto';
 
 @ApiTags('Accounts')
-@SkipThrottle()
 @Controller('account')
 export class AccountController {
   constructor(private readonly accountService: AccountService) {}
@@ -45,7 +45,7 @@ export class AccountController {
     );
   }
 
-  @SkipThrottle(false)
+  @UseGuards(RequestLimitGuard)
   @ApiOperation({ summary: 'Получение текущего баланса' })
   @ApiResponse({ status: HttpStatus.OK, type: String })
   @Get('/balance/:id')
