@@ -1,5 +1,17 @@
 # bank-service
 
+## Job description
+
+File with description: ./document/description.docx
+
+## Solution description
+
+Реализация REST API для операций по осуществлению банковский транзацкий.
+
+## Environmental requirements
+
+- docker
+
 ## Technologies
 
 - Postgres
@@ -9,18 +21,6 @@
 - Git
 - NPM
 - TypeScript
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Create database
-
-```
-$ CREATE DATABASE bank
-```
 
 ## Create `.env` file
 
@@ -41,7 +41,7 @@ WHITE_HOSTS=localhost:3000 google.com
 Run by npm
 
 ```bash
-$ npm run start:dev
+command: /bin/bash -c "npm i;npm start"
 ```
 
 Run in docker
@@ -51,6 +51,31 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-## Swagger
+## Example of using the application
 
-/api/docs
+создание клиента
+POST: [app-host]/clients
+
+```json
+{
+  "name": "name",
+  "document": "text",
+  "birthDate": "02.02.2022"
+}
+```
+
+создание аккаунта
+POST: [app-host]/account/{:idClient}
+
+```json
+{
+  "balance": "100",
+  "dailyWithdrawalLimit": "1",
+  "active": "true",
+  "accountType": 1
+}
+```
+
+## Swagger UI
+
+[app-host]/api/docs
